@@ -1,0 +1,17 @@
+# Local development database only.
+services:
+  db:
+    image: postgres:17
+    container_name: vehicle-forms-db
+    environment:
+      POSTGRES_USER: vehicle_forms
+      POSTGRES_PASSWORD: vehicle_forms_dev
+      POSTGRES_DB: vehicle_forms
+    ports:
+      - "127.0.0.1:5442:5432"
+    volumes:
+      - vehicle_forms_pgdata:/var/lib/postgresql/data
+    restart: unless-stopped
+
+volumes:
+  vehicle_forms_pgdata:

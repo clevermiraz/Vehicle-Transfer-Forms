@@ -1,0 +1,87 @@
+{
+  "_meta": {
+    "description": "Fictional test dataset used to generate and compare EVERY PDF form. Not real people, vehicles, NIDs, TINs or phone numbers.",
+    "rules": [
+      "All identifiers use obvious placeholder patterns (repeating/sequential digits).",
+      "Never replace these values with real customer data.",
+      "Field names follow the canonical names in docs/FORM_ANALYSIS.md."
+    ],
+    "coverage": [
+      "English values; Latin text is upper-cased at render time (decision #2)",
+      "Mixed Bangla + English + Bangla digits in one value (seller present address)",
+      "Bangla-only witness (witness 2) to prove typed Bangla still renders correctly",
+      "Long seller address that must wrap across 3 dotted rows on Form 22",
+      "father_or_husband: seller prints father, buyer prints husband (decision #3)",
+      "Present address prints on Forms 20/21/22, permanent only on Owner Particulars (decision #4)",
+      "Optional fields left null (guardian_name, seller.spouse_name, previous_registration_number)"
+    ]
+  },
+  "seller": {
+    "name": "MD. RAFIQUL ISLAM KHAN",
+    "father_name": "LATE ABDUL KARIM KHAN",
+    "mother_name": "MOST. SHAHANARA BEGUM",
+    "spouse_name": null,
+    "father_or_husband_pref": "father",
+    "guardian_name": null,
+    "gender": "MALE",
+    "date_of_birth": "1978-04-15",
+    "nationality": "BANGLADESHI",
+    "nid": "1234567890",
+    "tin": "111122223333",
+    "phone": "01900000001",
+    "present_address": "House#9, Road#12, Block#A, Shahjalal Uposhohor, Hazrat Shah Paran, Sylhet-3100; বাড়ি নং ৯, রোড ১২, ব্লক এ, শাহজালাল উপশহর, সিলেট সদর, সিলেট",
+    "permanent_address": "Village: Dakshin Surma, P.O: Dakshin Surma-3102, P.S: Dakshin Surma, Dist: Sylhet"
+  },
+  "buyer": {
+    "name": "SHRIMATI KRISHNA RANI DAS",
+    "father_name": "GOURANGA CHANDRA SEN",
+    "mother_name": "SABITRI RANI SEN",
+    "spouse_name": "PRADIP KUMAR DAS",
+    "father_or_husband_pref": "husband",
+    "guardian_name": null,
+    "gender": "FEMALE",
+    "date_of_birth": "1990-11-02",
+    "nationality": "BANGLADESHI",
+    "nid": "19901234567890123",
+    "tin": "444455556666",
+    "phone": "01800000002",
+    "present_address": "Village: Muradpur, P.O: Nabiganj-3370, Upazila: Nabiganj, Dist: Habiganj",
+    "permanent_address": "House#21, Road#4, Sector#7, Uttara, Dhaka-1230"
+  },
+  "vehicle": {
+    "registration_number": "DHAKA METRO-GA-99-0001",
+    "vehicle_type": "CAR (HATCH BACK)",
+    "chassis_number": "TEST0CHASSIS000001",
+    "engine_number": "TEST-ENG-000001",
+    "manufacturer": "TOYOTA",
+    "manufacturing_year": 2015,
+    "previous_registration_number": null
+  },
+  "transfer": {
+    "registration_authority": "BRTA, DHAKA METRO CIRCLE-1 (IKURIA)",
+    "sale_price": 500000,
+    "sale_price_words": "Five Lac",
+    "sale_date": "2026-09-20",
+    "fee_bank_name": "SONALI BANK PLC, TEST BRANCH",
+    "witnesses": [
+      {
+        "position": 1,
+        "name": "ABDUL MALEK",
+        "address": "Holding#5, Zindabazar, Sylhet-3100",
+        "phone": "01700000003"
+      },
+      {
+        "position": 2,
+        "name": "মোঃ সাইফুল ইসলাম",
+        "address": "বাড়ি নং ১৪, আম্বরখানা, সিলেট",
+        "phone": "01600000004"
+      },
+      {
+        "position": 3,
+        "name": "NASRIN AKTER",
+        "address": "Flat 3B, Road#2, Dhanmondi, Dhaka-1205",
+        "phone": "01500000005"
+      }
+    ]
+  }
+}
