@@ -1,0 +1,2 @@
+# Heroku builds from the repo root (the backend reads PDF templates from ../reference_forms).
+-r backend/requirements.txt
