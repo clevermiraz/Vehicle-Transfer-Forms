@@ -1,5 +1,6 @@
 from pathlib import Path
 
+from pydantic import field_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 BACKEND_DIR = Path(__file__).resolve().parents[2]
@@ -16,6 +17,13 @@ class Settings(BaseSettings):
     cookie_secure: bool = False
     # Original PDF forms. Read-only: the generator never writes to this directory.
     templates_dir: Path = PROJECT_DIR / "reference_forms"
+
+    @field_validator("database_url", mode="before")
+    @classmethod
+    def fix_database_url(cls, v: str) -> str:
+        if isinstance(v, str) and v.startswith("postgresql://"):
+            return v.replace("postgresql://", "postgresql+psycopg://", 1)
+        return v
 
 
 settings = Settings()
